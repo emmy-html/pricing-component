@@ -95,7 +95,7 @@ textarea {
 }
 
 /* Fonts & Colors */
-$main-font: 'Montserrat', sans-serif;
+$main-font: "Montserrat", sans-serif;
 $bold: 700;
 $semi-bold: 600;
 
@@ -105,14 +105,76 @@ $light-gray-blue: hsl(234, 14%, 74%);
 $light-violet: hsl(236, 72%, 79%);
 $very-light-gray-blue: hsl(240, 78%, 98%);
 $violet: hsl(237, 63%, 64%);
-/* Style Variables */  
-$gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
-/* Mobile Styles */ 
+/* Style Variables */
+$gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
 /* Universal Styles */
+body {
+  font-family: $main-font;
+  font-weight: $semi-bold;
+}
+/* Toggle Slider */
+/* The switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $gradient;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:hover {
+    opacity: 0.5;
+}
+input:checked + .slider {
+  background: $gradient;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded Slider */
+.slider.round {
+  border-radius: 34px;
+  &:before {
+    border-radius: 50%;
+  }
+}
+/* Mobile Styles */
 
-/* Tablet Styles */ 
+/* Tablet Styles */
 
-/* Desktop Styles */ 
+/* Desktop Styles */
 
 /* ==========================================================================
    Helper classes
@@ -278,4 +340,3 @@ $gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
     page-break-after: avoid;
   }
 }
-
