@@ -95,7 +95,18 @@ textarea {
 }
 
 /* Fonts & Colors */
+$main-font: 'Montserrat', sans-serif;
+$bold: 700;
+$semi-bold: 600;
+
+$dark-gray-blue: hsl(232, 13%, 33%);
+$gray-blue: hsl(233, 13%, 49%);
+$light-gray-blue: hsl(234, 14%, 74%);
+$light-violet: hsl(236, 72%, 79%);
+$very-light-gray-blue: hsl(240, 78%, 98%);
+$violet: hsl(237, 63%, 64%);
 /* Style Variables */  
+$gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
 /* Mobile Styles */ 
 /* Universal Styles */
 
