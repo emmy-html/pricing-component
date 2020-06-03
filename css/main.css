@@ -79,10 +79,15 @@ textarea {
 
 /* Fonts & Colors */
 /* Style Variables */
+/* Mixins */
 /* Universal Styles */
 body {
   font-family: "Montserrat", sans-serif;
-  font-weight: 600; }
+  font-weight: 600;
+  text-align: center; }
+
+.content-wrapper {
+  margin: 0px 25px; }
 
 /* Toggle Slider */
 /* The switch */
@@ -128,7 +133,7 @@ input:checked + .slider {
   background: linear-gradient(#a3a8f0, #696fdd); }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3; }
+  box-shadow: 0 0 1px #494c5f; }
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
@@ -142,6 +147,50 @@ input:checked + .slider:before {
     border-radius: 50%; }
 
 /* Mobile Styles */
+#pricing .pricing-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 250px;
+  margin: 0 auto; }
+#pricing .plan-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center; }
+#pricing .basic-plan {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px #f6f6fe;
+  height: 450px;
+  padding: 0px 30px;
+  margin-top: 80px; }
+  #pricing .basic-plan a.gradient-button {
+    background: linear-gradient(#a3a8f0, #696fdd);
+    border-radius: 5px;
+    color: white;
+    margin-top: 30px;
+    padding: 20px 80px;
+    text-decoration: none; }
+#pricing .card h1 {
+  font-size: 3.75rem;
+  line-height: 1rem;
+  padding: 10px 0px; }
+#pricing .card h2 {
+  font-size: 1.25rem;
+  line-height: 1rem;
+  padding-top: 15px; }
+#pricing .card p {
+  border-top: 1px solid #b3b5c6;
+  line-height: 1.5rem;
+  padding-top: 1rem; }
+#pricing .card p:nth-of-type(3) {
+  border-bottom: 1px solid #b3b5c6;
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem; }
+
 /* Tablet Styles */
 /* Desktop Styles */
 /* ==========================================================================
