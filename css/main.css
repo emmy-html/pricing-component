@@ -82,6 +82,7 @@ textarea {
 /* Mixins */
 /* Universal Styles */
 body {
+  background: #f6f6fe;
   color: #494c5f;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -122,6 +123,9 @@ a.button {
     background: none;
     border: 1px solid white;
     color: white; }
+
+h2 {
+  font-weight: 600; }
 
 /* Toggle Slider */
 /* The switch */
@@ -181,13 +185,17 @@ input:checked + .slider:before {
     border-radius: 50%; }
 
 /* Mobile Styles */
+#pricing h1 {
+  padding-top: 70px; }
 #pricing .pricing-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  width: 250px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 250px; }
+  #pricing .pricing-options p {
+    color: #b3b5c6; }
 #pricing .plan-container {
   display: flex;
   flex-direction: column;
@@ -233,8 +241,22 @@ input:checked + .slider:before {
   padding: 0px 30px;
   margin-top: 30px; }
 
-/* Tablet Styles */
 /* Desktop Styles */
+@media screen and (min-width: 1200px) {
+  #pricing .pricing-options {
+    margin-bottom: 45px; }
+  #pricing .plan-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+  #pricing .professional-plan {
+    height: 500px;
+    z-index: 100; }
+    #pricing .professional-plan h2 {
+      margin-top: 46px; }
+  #pricing .basic-plan,
+  #pricing .master-plan {
+    margin-top: 40px; } }
 /* ==========================================================================
    Helper classes
    ========================================================================== */

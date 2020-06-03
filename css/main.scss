@@ -136,6 +136,7 @@ $reverse-gradient: linear-gradient(to bottom, hsl(236, 72%, 79%), hsl(237, 63%, 
 }
 /* Universal Styles */
 body {
+    background: $very-light-gray-blue;
   color: $dark-gray-blue;
   font-family: $main-font;
   font-weight: $semi-bold;
@@ -164,6 +165,9 @@ a.button {
         border: 1px solid white;
         color: white;
     }
+}
+h2 {
+    font-weight: $semi-bold;
 }
 /* Toggle Slider */
 /* The switch */
@@ -225,13 +229,19 @@ input:checked + .slider:before {
 }
 /* Mobile Styles */
 #pricing {
+    h1 {
+        padding-top: 70px;
+    }
   .pricing-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    width: 250px;
     margin: 0 auto;
+    width: 250px;
+    p {
+        color: $light-gray-blue;
+    }
   }
   .plan-container {
     display: flex;
@@ -275,9 +285,30 @@ input:checked + .slider:before {
     margin-top: 30px;
   }
 }
-/* Tablet Styles */
-
 /* Desktop Styles */
+@media screen and (min-width: 1200px) {
+    #pricing {
+        .pricing-options {
+            margin-bottom: 45px;
+        }
+        .plan-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .professional-plan {
+            height: 500px;
+            z-index: 100;
+            h2 {
+                margin-top: 46px;
+            }
+        }
+        .basic-plan,
+        .master-plan {
+            margin-top: 40px;
+        }
+    }
+}
 
 /* ==========================================================================
    Helper classes
