@@ -123,6 +123,20 @@ $gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
         text-decoration: none;
     }
 }
+@mixin purple-card {
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 5px $very-light-gray-blue;
+    height: 450px;
+    padding: 0px 30px;
+    a.gradient-button {
+        background: $gradient;
+        border-radius: 5px;
+        color: white;
+        margin-top: 30px;
+        padding: 20px 80px;
+        text-decoration: none;
+    }
+}
 /* Universal Styles */
 body {
   font-family: $main-font;
@@ -207,10 +221,6 @@ input:checked + .slider:before {
         align-items: center;
         align-content: center;
     }
-    .basic-plan {
-        @include white-card;
-        margin-top: 80px;
-    }
     .card {
         h1 {
             font-size: 3.75rem;
@@ -232,6 +242,18 @@ input:checked + .slider:before {
             padding-bottom: 1rem;
             margin-bottom: 2.5rem;
         }
+    }
+    .basic-plan {
+        @include white-card;
+        margin-top: 80px;
+    }
+    .professional-plan {
+        @include purple-card;
+        margin-top: 30px;
+    }
+    .master-plan {
+        @include white-card;
+        margin-top: 30px;
     }
 }
 /* Tablet Styles */

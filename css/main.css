@@ -160,20 +160,6 @@ input:checked + .slider:before {
   justify-content: space-between;
   align-items: center;
   align-content: center; }
-#pricing .basic-plan {
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 5px #f6f6fe;
-  height: 450px;
-  padding: 0px 30px;
-  margin-top: 80px; }
-  #pricing .basic-plan a.gradient-button {
-    background: linear-gradient(#a3a8f0, #696fdd);
-    border-radius: 5px;
-    color: white;
-    margin-top: 30px;
-    padding: 20px 80px;
-    text-decoration: none; }
 #pricing .card h1 {
   font-size: 3.75rem;
   line-height: 1rem;
@@ -190,6 +176,47 @@ input:checked + .slider:before {
   border-bottom: 1px solid #b3b5c6;
   padding-bottom: 1rem;
   margin-bottom: 2.5rem; }
+#pricing .basic-plan {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px #f6f6fe;
+  height: 450px;
+  padding: 0px 30px;
+  margin-top: 80px; }
+  #pricing .basic-plan a.gradient-button {
+    background: linear-gradient(#a3a8f0, #696fdd);
+    border-radius: 5px;
+    color: white;
+    margin-top: 30px;
+    padding: 20px 80px;
+    text-decoration: none; }
+#pricing .professional-plan {
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px #f6f6fe;
+  height: 450px;
+  padding: 0px 30px;
+  margin-top: 30px; }
+  #pricing .professional-plan a.gradient-button {
+    background: linear-gradient(#a3a8f0, #696fdd);
+    border-radius: 5px;
+    color: white;
+    margin-top: 30px;
+    padding: 20px 80px;
+    text-decoration: none; }
+#pricing .master-plan {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px #f6f6fe;
+  height: 450px;
+  padding: 0px 30px;
+  margin-top: 30px; }
+  #pricing .master-plan a.gradient-button {
+    background: linear-gradient(#a3a8f0, #696fdd);
+    border-radius: 5px;
+    color: white;
+    margin-top: 30px;
+    padding: 20px 80px;
+    text-decoration: none; }
 
 /* Tablet Styles */
 /* Desktop Styles */
