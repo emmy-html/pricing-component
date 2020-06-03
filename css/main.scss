@@ -288,7 +288,7 @@ input:checked + .slider:before {
     p:nth-of-type(3) {
       border-bottom: 1px solid $light-gray-blue;
       padding-bottom: 1rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
   }
   .basic-plan {
@@ -303,6 +303,21 @@ input:checked + .slider:before {
     @include white-card;
     margin-top: 30px;
   }
+}
+footer {
+    padding: 40px 0px 20px 0px;
+    span {
+        display: block;
+    }
+    a:link,
+    a:visited {
+        color: $violet;
+        text-decoration: none;
+    }
+    a:hover {
+        color: $light-violet;
+        transition: 1s color;
+    }
 }
 /* Extra Small Screens */
 @media screen and (max-width: 325px) {
@@ -319,20 +334,6 @@ input:checked + .slider:before {
   #pricing {
       &:before {
           left: 75%;
-      }
-      &:after {
-          content: " ";
-          background-image: url("../img/bg-bottom.svg");
-          background-size: cover;
-          background-repeat: no-repeat;
-          width: 350px;
-          height: 300px;
-          position: absolute;
-          top: 80%;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          z-index: -100;
       }
     .pricing-options {
       margin-bottom: 45px;
@@ -352,6 +353,25 @@ input:checked + .slider:before {
     .basic-plan,
     .master-plan {
       margin-top: 40px;
+    }
+  }
+  footer {
+    &:before {
+        content: " ";
+        background-image: url("../img/bg-bottom.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 360px;
+        height: 310px;
+        position: absolute;
+        top: 75%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -100;
+    }
+    span {
+        display: inline;
     }
   }
 }

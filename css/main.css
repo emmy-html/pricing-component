@@ -235,7 +235,7 @@ input:checked + .slider:before {
   #pricing .card p:nth-of-type(3) {
     border-bottom: 1px solid #b3b5c6;
     padding-bottom: 1rem;
-    margin-bottom: 2.5rem; }
+    margin-bottom: 2rem; }
 #pricing .basic-plan {
   background: white;
   border-radius: 5px;
@@ -256,6 +256,18 @@ input:checked + .slider:before {
   padding: 0px 30px;
   margin-top: 30px; }
 
+footer {
+  padding: 40px 0px 20px 0px; }
+  footer span {
+    display: block; }
+  footer a:link,
+  footer a:visited {
+    color: #696fdd;
+    text-decoration: none; }
+  footer a:hover {
+    color: #a3a8f0;
+    transition: 1s color; }
+
 /* Extra Small Screens */
 @media screen and (max-width: 325px) {
   #pricing .plan-container .card {
@@ -264,19 +276,6 @@ input:checked + .slider:before {
 @media screen and (min-width: 1200px) {
   #pricing:before {
     left: 75%; }
-  #pricing:after {
-    content: " ";
-    background-image: url("../img/bg-bottom.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 350px;
-    height: 300px;
-    position: absolute;
-    top: 80%;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -100; }
   #pricing .pricing-options {
     margin-bottom: 45px; }
   #pricing .plan-container {
@@ -290,7 +289,23 @@ input:checked + .slider:before {
       margin-top: 46px; }
   #pricing .basic-plan,
   #pricing .master-plan {
-    margin-top: 40px; } }
+    margin-top: 40px; }
+
+  footer:before {
+    content: " ";
+    background-image: url("../img/bg-bottom.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 360px;
+    height: 310px;
+    position: absolute;
+    top: 75%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -100; }
+  footer span {
+    display: inline; } }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
