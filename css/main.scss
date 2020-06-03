@@ -107,36 +107,39 @@ $very-light-gray-blue: hsl(240, 78%, 98%);
 $violet: hsl(237, 63%, 64%);
 /* Style Variables */
 $gradient: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
-$reverse-gradient: linear-gradient(to bottom, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+$reverse-gradient: linear-gradient(
+  to bottom,
+  hsl(236, 72%, 79%),
+  hsl(237, 63%, 64%)
+);
 /* Mixins */
 @mixin white-card {
   background: white;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 5px $very-light-gray-blue;
   height: 450px;
   padding: 0px 30px;
 }
 @mixin button {
   border-radius: 5px;
   color: white;
+  display: block;
   font-size: 0.85rem;
   letter-spacing: 0.1rem;
   margin-top: 30px;
-  padding: 15px 80px;
+  padding: 15px 0px;
   text-decoration: none;
   text-transform: uppercase;
 }
 @mixin purple-card {
-    background: $reverse-gradient;
+  background: $reverse-gradient;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 5px $very-light-gray-blue;
   color: white;
   height: 450px;
   padding: 0px 30px;
 }
 /* Universal Styles */
 body {
-    background: $very-light-gray-blue;
+  background: $very-light-gray-blue;
   color: $dark-gray-blue;
   font-family: $main-font;
   font-weight: $semi-bold;
@@ -156,18 +159,18 @@ a.gradient-button {
   }
 }
 a.button {
-    @include button;
-    background: white;
-    border: 1px solid;
-    color: $violet;
-    &:hover {
-        background: none;
-        border: 1px solid white;
-        color: white;
-    }
+  @include button;
+  background: white;
+  border: 1px solid;
+  color: $violet;
+  &:hover {
+    background: none;
+    border: 1px solid white;
+    color: white;
+  }
 }
 h2 {
-    font-weight: $semi-bold;
+  font-weight: $semi-bold;
 }
 /* Toggle Slider */
 /* The switch */
@@ -229,9 +232,23 @@ input:checked + .slider:before {
 }
 /* Mobile Styles */
 #pricing {
-    h1 {
-        padding-top: 70px;
-    }
+  &:before {
+    content: " ";
+    background-image: url("../img/bg-top.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 55%;
+    bottom: 0;
+    right: 0;
+    z-index: -100;
+  }
+  h1 {
+    padding-top: 70px;
+  }
   .pricing-options {
     display: flex;
     justify-content: space-between;
@@ -240,7 +257,7 @@ input:checked + .slider:before {
     margin: 0 auto;
     width: 250px;
     p {
-        color: $light-gray-blue;
+      color: $light-gray-blue;
     }
   }
   .plan-container {
@@ -251,6 +268,8 @@ input:checked + .slider:before {
     align-content: center;
   }
   .card {
+    box-shadow: 0px 0px 10px 5px #eae9fb;
+    width: 320px;
     h1 {
       font-size: 3.75rem;
       line-height: 1rem;
@@ -285,29 +304,56 @@ input:checked + .slider:before {
     margin-top: 30px;
   }
 }
+/* Extra Small Screens */
+@media screen and (max-width: 325px) {
+  #pricing {
+    .plan-container {
+      .card {
+        width: 230px;
+      }
+    }
+  }
+}
 /* Desktop Styles */
 @media screen and (min-width: 1200px) {
-    #pricing {
-        .pricing-options {
-            margin-bottom: 45px;
-        }
-        .plan-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-        .professional-plan {
-            height: 500px;
-            z-index: 100;
-            h2 {
-                margin-top: 46px;
-            }
-        }
-        .basic-plan,
-        .master-plan {
-            margin-top: 40px;
-        }
+  #pricing {
+      &:before {
+          left: 75%;
+      }
+      &:after {
+          content: " ";
+          background-image: url("../img/bg-bottom.svg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          width: 350px;
+          height: 300px;
+          position: absolute;
+          top: 80%;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          z-index: -100;
+      }
+    .pricing-options {
+      margin-bottom: 45px;
     }
+    .plan-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .professional-plan {
+      height: 500px;
+      z-index: 100;
+      h2 {
+        margin-top: 46px;
+      }
+    }
+    .basic-plan,
+    .master-plan {
+      margin-top: 40px;
+    }
+  }
 }
 
 /* ==========================================================================
