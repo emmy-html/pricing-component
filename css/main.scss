@@ -106,45 +106,64 @@ $light-violet: hsl(236, 72%, 79%);
 $very-light-gray-blue: hsl(240, 78%, 98%);
 $violet: hsl(237, 63%, 64%);
 /* Style Variables */
-$gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
-/* Mixins */ 
+$gradient: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+$reverse-gradient: linear-gradient(to bottom, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+/* Mixins */
 @mixin white-card {
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 5px $very-light-gray-blue;
-    height: 450px;
-    padding: 0px 30px;
-    a.gradient-button {
-        background: $gradient;
-        border-radius: 5px;
-        color: white;
-        margin-top: 30px;
-        padding: 20px 80px;
-        text-decoration: none;
-    }
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px $very-light-gray-blue;
+  height: 450px;
+  padding: 0px 30px;
+}
+@mixin button {
+  border-radius: 5px;
+  color: white;
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
+  margin-top: 30px;
+  padding: 15px 80px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 @mixin purple-card {
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 5px $very-light-gray-blue;
-    height: 450px;
-    padding: 0px 30px;
-    a.gradient-button {
-        background: $gradient;
-        border-radius: 5px;
-        color: white;
-        margin-top: 30px;
-        padding: 20px 80px;
-        text-decoration: none;
-    }
+    background: $reverse-gradient;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px $very-light-gray-blue;
+  color: white;
+  height: 450px;
+  padding: 0px 30px;
 }
 /* Universal Styles */
 body {
+  color: $dark-gray-blue;
   font-family: $main-font;
   font-weight: $semi-bold;
   text-align: center;
 }
 .content-wrapper {
-    margin: 0px 25px;
+  margin: 0px 25px;
+}
+a.gradient-button {
+  @include button;
+  background: $gradient;
+  border: 1px solid;
+  &:hover {
+    background: none;
+    border: 1px solid $dark-gray-blue;
+    color: $violet;
+  }
+}
+a.button {
+    @include button;
+    background: white;
+    border: 1px solid;
+    color: $violet;
+    &:hover {
+        background: none;
+        border: 1px solid white;
+        color: white;
+    }
 }
 /* Toggle Slider */
 /* The switch */
@@ -184,7 +203,7 @@ body {
   transition: 0.4s;
 }
 .slider:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 input:checked + .slider {
   background: $gradient;
@@ -206,55 +225,55 @@ input:checked + .slider:before {
 }
 /* Mobile Styles */
 #pricing {
-    .pricing-options {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        align-content: center;
-        width: 250px;
-        margin: 0 auto;
+  .pricing-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 250px;
+    margin: 0 auto;
+  }
+  .plan-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+  .card {
+    h1 {
+      font-size: 3.75rem;
+      line-height: 1rem;
+      padding: 10px 0px;
     }
-    .plan-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        align-content: center;
+    h2 {
+      font-size: 1.25rem;
+      line-height: 1rem;
+      padding-top: 15px;
     }
-    .card {
-        h1 {
-            font-size: 3.75rem;
-            line-height: 1rem;
-            padding: 10px 0px;
-        }
-        h2 {
-            font-size: 1.25rem;
-            line-height: 1rem;
-            padding-top: 15px;
-        }
-        p {
-            border-top: 1px solid $light-gray-blue;
-            line-height: 1.5rem;
-            padding-top: 1rem;
-        }
-        p:nth-of-type(3) {
-            border-bottom: 1px solid $light-gray-blue;
-            padding-bottom: 1rem;
-            margin-bottom: 2.5rem;
-        }
+    p {
+      border-top: 1px solid $light-gray-blue;
+      line-height: 1.5rem;
+      padding-top: 1rem;
     }
-    .basic-plan {
-        @include white-card;
-        margin-top: 80px;
+    p:nth-of-type(3) {
+      border-bottom: 1px solid $light-gray-blue;
+      padding-bottom: 1rem;
+      margin-bottom: 2.5rem;
     }
-    .professional-plan {
-        @include purple-card;
-        margin-top: 30px;
-    }
-    .master-plan {
-        @include white-card;
-        margin-top: 30px;
-    }
+  }
+  .basic-plan {
+    @include white-card;
+    margin-top: 80px;
+  }
+  .professional-plan {
+    @include purple-card;
+    margin-top: 30px;
+  }
+  .master-plan {
+    @include white-card;
+    margin-top: 30px;
+  }
 }
 /* Tablet Styles */
 
